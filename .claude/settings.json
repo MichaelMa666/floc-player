@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc:*)",
+      "Bash(awk:*)",
+      "Bash(tr:*)",
+      "Bash(tail:*)",
+      "Bash(cut:*)",
+      "Bash(cat:*)",
+      "Bash(ls:*)",
+      "Bash(grep:*)",
+      "Bash(find:*)",
+      "Bash(rsync:*)",
+      "Bash(npm run *)",
+      "Bash(node *)",
+      "Edit(**)",
+      "Write(**)",
+      "Read(**)"
+    ],
+    "deny": [
+      "Bash(rm -rf /*)",
+      "Bash(curl * | sh)"
+    ]
+  }
+}

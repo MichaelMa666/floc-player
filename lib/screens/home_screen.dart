@@ -56,6 +56,11 @@ class HomeScreen extends StatelessWidget {
               selectedIcon: Icon(Icons.video_library),
               label: '视频',
             ),
+            NavigationDestination(
+              icon: Icon(Icons.cloud_outlined),
+              selectedIcon: Icon(Icons.cloud),
+              label: '在线',
+            ),
           ],
         ),
       ),

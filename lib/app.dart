@@ -7,9 +7,11 @@ import 'data/match_detail_source.dart';
 import 'data/video_source.dart';
 import 'providers/auth_provider.dart';
 import 'providers/live_provider.dart';
+import 'providers/play_history_provider.dart';
 import 'providers/video_provider.dart';
 import 'router.dart';
 import 'services/auth_service.dart';
+import 'services/site_registry.dart';
 
 class FlocPlayerApp extends StatelessWidget {
   const FlocPlayerApp({
@@ -32,11 +34,13 @@ class FlocPlayerApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         Provider<MatchDetailSource>.value(value: matchDetailSource),
+        Provider<SiteRegistry>.value(value: SiteRegistry.defaults()),
         ChangeNotifierProvider(create: (_) => AuthProvider(authService)),
         ChangeNotifierProvider(create: (_) => LiveProvider(channelSource)),
         ChangeNotifierProvider(
           create: (_) => VideoProvider(videoSource, prefs),
         ),
+        ChangeNotifierProvider(create: (_) => PlayHistoryProvider(prefs)),
       ],
       child: MaterialApp.router(
         title: 'floc player',
